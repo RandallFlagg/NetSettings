@@ -1,7 +1,9 @@
-﻿using NetSettings.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NetSettings.View;
 
 namespace NetSettings.Data
 {
@@ -80,7 +82,7 @@ namespace NetSettings.Data
         {
             Dictionary<string, object> result = new Dictionary<string, object>();
             foreach (KeyValuePair<string, ItemTree> pair in fQualifiedNames)
-                result.Add(pair.Key, pair.Value.defaultValue);
+                result.Add(pair.Key, pair.Value.defaultvalue);
 
             return result;
         }
@@ -108,8 +110,7 @@ namespace NetSettings.Data
                 {
                     ChangedMode = ItemChangedMode.Synthesized,
                     Key = key,
-                    Val = GetValueOrDefault(key) ,
-                    type = fQualifiedNames[key].type
+                    Val = GetValueOrDefault(key)
                 });
         }
 
@@ -127,7 +128,7 @@ namespace NetSettings.Data
             ItemTree itemTree;
             if (fQualifiedNames.TryGetValue(key, out itemTree))
             {
-                return itemTree.defaultValue;
+                return itemTree.defaultvalue;
             }
             return null;
         }

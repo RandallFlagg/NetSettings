@@ -1,4 +1,9 @@
-﻿using NetSettings.Controls;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NetSettings.Controls;
 using NetSettings.Data;
 
 namespace NetSettings.View
@@ -8,8 +13,7 @@ namespace NetSettings.View
         public ControlContainer container { get; set; }
         public ControlContainer descriptionContainer { get; set; }
         public DataProvider dataProvider { get; set; }
-        public DataViewPlacement placement = new DataViewPlacement();
         internal Filter filter;
-
+        internal DataViewPlacement placement = new DataViewPlacement();
     }
 }

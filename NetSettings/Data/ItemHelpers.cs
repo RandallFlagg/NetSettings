@@ -1,6 +1,9 @@
-﻿using NetSettings.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NetSettings.Data;
 
 namespace NetSettings
 {
@@ -20,8 +23,8 @@ namespace NetSettings
                     item.FullName = String.Format("{0}.{1}", currentParent.FullName, item.name);
                 }
             }
-            if (item.subItems != null)
-                foreach (ItemTree subItem in item.subItems)
+            if (item.subitems != null)
+                foreach (ItemTree subItem in item.subitems)
                 {
                     BuildQualifiedNames(aQualifiedNames, subItem, item);
 
