@@ -1,9 +1,7 @@
-﻿using System;
+﻿using NetSettings.Data;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NetSettings.Data;
+using System.Drawing;
 
 namespace NetSettings
 {
@@ -23,8 +21,8 @@ namespace NetSettings
                     item.FullName = String.Format("{0}.{1}", currentParent.FullName, item.name);
                 }
             }
-            if (item.subitems != null)
-                foreach (ItemTree subItem in item.subitems)
+            if (item.subItems != null)
+                foreach (ItemTree subItem in item.subItems)
                 {
                     BuildQualifiedNames(aQualifiedNames, subItem, item);
 
@@ -61,7 +59,7 @@ namespace NetSettings
                 try
                 {
                     if (obj != null && obj is string)
-                        obj = System.Drawing.ColorTranslator.FromHtml(obj as string);
+                        obj = ColorTranslator.FromHtml(obj as string);
                 }
                 finally
                 {
@@ -70,8 +68,8 @@ namespace NetSettings
 
                 
 			//Make sure all the colors are created from (R,G,B) and not known names
-                System.Drawing.Color c = (System.Drawing.Color)(obj);
-                obj = System.Drawing.Color.FromArgb(c.R, c.G, c.B);
+                Color c = (System.Drawing.Color)(obj);
+                obj = Color.FromArgb(c.R, c.G, c.B);
 
                 //if (aItem.value != null && aItem.value is string)
                 //    aItem.value = System.Drawing.ColorTranslator.FromHtml(aItem.value as string);
