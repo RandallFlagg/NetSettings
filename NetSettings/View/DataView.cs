@@ -631,7 +631,8 @@ namespace NetSettings.View
                         sender = this,
                         ChangedMode = aMode,
                         Key = aVisualItem.Item.FullName,
-                        Val = aVal
+                        Val = aVal,
+                        type = aVisualItem.Item.type
                     });
 
 
