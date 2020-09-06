@@ -478,37 +478,34 @@ namespace NetSettings.Common.Classes
 
         public static Color Parse(string htmlColor)
         {
-            Color result;
+            Color result = Color.White;
             if (Enum.TryParse(htmlColor, out KnownColor knownColor))
             {
                 result = new Color(knownColor);
             }
             else if (htmlColor.Split(',').Length > 1)
             {
-                throw new NotImplementedException("");
-                if (false)
-                {
-                    var values = htmlColor.Split(',');
-                    switch (values.Length)
-                    {
-                        case 1:
-                            var value = values[0];
-                            if (value.Length == 7 && value.StartsWith("#"))
-                            {
-                                //"#E3D51C"
-                            }
 
-                            break;
-                        case 3:
-                            result = FromArgb(255, byte.Parse(values[0]), byte.Parse(values[1]), byte.Parse(values[2]));
-                            break;
-                        case 4:
-                            result = FromArgb(byte.Parse(values[0]), byte.Parse(values[1]), byte.Parse(values[2]),
-                                byte.Parse(values[3]));
-                            break;
-                        default:
-                            throw new ArgumentException();
-                    }
+                var values = htmlColor.Split(',');
+                switch (values.Length)
+                {
+                    case 1:
+                        var value = values[0];
+                        if (value.Length == 7 && value.StartsWith("#"))
+                        {
+                            //"#E3D51C"
+                        }
+
+                        break;
+                    case 3:
+                        result = FromArgb(255, byte.Parse(values[0]), byte.Parse(values[1]), byte.Parse(values[2]));
+                        break;
+                    case 4:
+                        result = FromArgb(byte.Parse(values[0]), byte.Parse(values[1]), byte.Parse(values[2]),
+                            byte.Parse(values[3]));
+                        break;
+                    default:
+                        throw new ArgumentException();
                 }
             }
             else

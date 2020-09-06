@@ -114,7 +114,8 @@ namespace NetSettings.View
             ItemTree item = rootVisualItem.Item;
             if (item.subItems != null)
             {
-                rootVisualItem.subItems = new List<VisualItem>();
+                rootVisualItem.subItems = new VisualItem[item.subItems.Length];
+                int i = 0;
                 foreach (var subItem in item.subItems)
                 {
                     var visualItem = new VisualItem
@@ -122,7 +123,7 @@ namespace NetSettings.View
                         Item = subItem,
                         IsFiltered = true
                     };
-                    rootVisualItem.subItems.Add(visualItem);
+                    rootVisualItem.subItems[i++] = visualItem;
                     CreateVisualItemTree(visualItem);
                 }
             }
