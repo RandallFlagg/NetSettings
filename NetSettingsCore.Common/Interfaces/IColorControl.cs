@@ -1,6 +1,6 @@
 ﻿namespace NetSettings.Common.Interfaces
 {
-    public interface IColorControl : IControl
+    public interface IColorControl : ITextBox
     {
     }
 }

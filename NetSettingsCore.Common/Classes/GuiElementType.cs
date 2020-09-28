@@ -25,7 +25,7 @@
         IFont,
         GuiElement,
         Label,
-        //ILabelSingleClick,
+        //ILabel,
         Button,
         ColorDialog,
         SaveFileDialog,
