@@ -1,4 +1,4 @@
-LL license 
+Open image viewer license 
 --------
 
 ### You are free to:  
