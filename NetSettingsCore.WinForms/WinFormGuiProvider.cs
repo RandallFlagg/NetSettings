@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Drawing;
-using NetSettings.View;
-using NetSettings.WinForms.Controls;
-using NetSettingsCore.Common;
-using NetSettingsCore.WinForms.WinFormControls;
+using NetSettings.Common.Classes;
+using NetSettings.Common.Interfaces;
+using NetSettings.WinForms.WinFormControls;
 
-namespace NetSettings.Forms
+namespace NetSettings.WinForms
 {
     public class WinFormGuiProvider : IGuiProvider
     {
@@ -66,13 +64,16 @@ namespace NetSettings.Forms
                     control = new WinFormButton();
                     break;
                 case GuiElementType.Color:
-                    control = new ColorControl();
+                    control = new WinFormColorControl();
                     break;
                 case GuiElementType.Combo:
                     control = new WinFormComboBox();
                     break;
+                case GuiElementType.ColorDialog:
+                    control = new WinFormColorDialog();
+                    break;
                 default:
-                    throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    throw new NotImplementedException($"gui element {guiElementName} is not known. How did we get here?");
             }
 
             return control;

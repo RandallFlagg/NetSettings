@@ -1,10 +1,10 @@
-﻿using NetSettingsCore.Common;
+﻿using NetSettings.Common.Interfaces;
 
 namespace NetSettings.View
 {
     public class ItemControlsGroup
     {
-        public ILabelSingleClick label;
+        public ILabel label;
         public IControl parentContainer;
         public IControl control;
         public IButton defaultButton;

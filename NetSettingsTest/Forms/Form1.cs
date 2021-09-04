@@ -1,19 +1,17 @@
-﻿using NetSettings.Data;
-using NetSettings.View;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using NetSettings.Forms;
-using NetSettingsCore.Common;
+using NetSettings.Data;
+using NetSettings.View;
+using NetSettings.WinForms;
+using Newtonsoft.Json;
 using TextBox = System.Windows.Forms.TextBox;
 
-namespace NetSettingsTest
+namespace NetSettingsTest.Forms
 {
     public partial class Form1 : Form
     {
-        private const string SettingsFilePath = @"Resources\GuiTemplate.json";
         private const string UserPath = @".\settings";
         private Dictionary<string, object> fUserSettings;
         private readonly DataView fView;
@@ -25,7 +23,8 @@ namespace NetSettingsTest
         {
             InitializeComponent();
             fView = new DataView();
-            fData = new DataProvider(ItemTree.FromFile(SettingsFilePath));
+            const string settingsFilePath = @"Resources\GuiTemplate.json";
+            fData = new DataProvider(ItemTree.FromFile(settingsFilePath));
             //Create manually view[1]
             fDataViewParams = new DataViewParams
             {
