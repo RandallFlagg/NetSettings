@@ -167,7 +167,8 @@ namespace NetSettingsCore.Common
 
     public enum DockStyle
     {
-        Fill
+        None
+        , Fill
     }
 
     //public class SaveFileDialog : FileDialog

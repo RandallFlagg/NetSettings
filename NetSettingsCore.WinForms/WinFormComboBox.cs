@@ -13,7 +13,11 @@ namespace NetSettings.Forms
         public event EventHandler MouseClick;
         public event EventHandler MouseDoubleClick;
         public event EventHandler KeyDown;
-
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+            this.DroppedDown = true;
+            base.OnMouseClick(e);
+        }
         public void AddItem(string item)
         {
             Items.Add(item);
