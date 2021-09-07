@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NetSettingsCore.Common;
 
 namespace NetSettings.Data
 {
@@ -78,11 +77,14 @@ namespace NetSettings.Data
             ItemHelpers.BuildQualifiedNames(RootTemplate, out fQualifiedNames);
             fDataBinding = GenerateDefaultOptionsSet();
         }
-        public Dictionary<string, object> GenerateDefaultOptionsSet()
+
+        public Dictionary<string, object> GenerateDefaultOptionsSet()//TODO: Consider using this as a property and use fDataBinding as the backend field.
         {
-            Dictionary<string, object> result = new Dictionary<string, object>();
-            foreach (KeyValuePair<string, ItemTree> pair in fQualifiedNames)
-                result.Add(pair.Key, pair.Value.defaultValue);
+            var result = new Dictionary<string, object>();
+            foreach (var (key, value) in fQualifiedNames)
+            {
+                result.Add(key, value.defaultValue);
+            }
 
             return result;
         }

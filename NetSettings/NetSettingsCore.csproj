@@ -4,6 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>false</UseWindowsForms>
+    <RootNamespace>NetSettings</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Colourful" Version="2.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetSettingsCore.Avalonia\NetSettingsCore.Avalonia.csproj" />
     <ProjectReference Include="..\NetSettingsCore.WinForms\NetSettingsCore.WinForms.csproj" />
   </ItemGroup>
 

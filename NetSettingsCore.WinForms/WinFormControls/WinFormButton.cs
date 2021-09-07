@@ -1,62 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Windows.Forms;
-using NetSettingsCore.Common;
-using FlatStyle = NetSettingsCore.Common.FlatStyle;
+﻿using System.Windows.Forms;
+using NetSettings.Common.Interfaces;
+using FlatStyle = NetSettings.Common.Classes.FlatStyle;
 
-namespace NetSettings.Forms
+namespace NetSettings.WinForms.WinFormControls
 {
-    internal class WinFormButton : Button, IButton
+    internal class WinFormButton : WinFormControl, IButton
     {
-        //WinFormControl(System.Windows.Forms.Control control)
-        //{
-        //    Instance = control;
-        //}
+        private readonly Button _button = new Button();
 
-        //public VisualItem Tag { get; set; }
-        //public ITextBox Instance => this;//{ get; set; }
-        //public bool Multiline { get; set; }
-        //public new DockStyle Dock { get; set; }
-        //public bool ReadOnly { get; set; }
-        //public BorderStyle BorderStyle { get; set; }
-        //public new IFont Font { get; set; }
-        ////public new IList<IGuiElement> Controls { get => base.Controls; set; }
-        //public new IList Controls => base.Controls;
-        //public FlatStyle FlatStyle
-        //{
-        //    get => throw new NotImplementedException(); set => throw new NotImplementedException();
-        //}
-
-        //public new event EventHandler MouseClick;
-        //public event EventHandler SelectedIndexChanged;
-        //public new event EventHandler MouseDoubleClick;
-        //public new event EventHandler KeyDown;
-        //public new int Size { get; set; }
-        //public FontAppearance Appearance { get; set; }
-        //public string FontFamily { get; set; }
-        //public void SetStyle(GuiElementStyles standardDoubleClick, bool value)
-        //{
-        //    base.SetStyle((ControlStyles)standardDoubleClick, value);
-        //}
-
-        //public bool Checked { get; set; }
-        //public IList Controls { get; }
-        //public IFont Font { get; set; }
-        //public event EventHandler MouseClick;
-        //public event EventHandler SelectedIndexChanged;
-        //public event EventHandler MouseDoubleClick;
-        //public event EventHandler KeyDown;
-        //public FlatStyle FlatStyle { get; set; }
-        public new FlatStyle FlatStyle
+        public WinFormButton()
         {
-            get => (FlatStyle)base.FlatStyle;
-            set => base.FlatStyle = (System.Windows.Forms.FlatStyle)value;
+            _control = _button;
         }
-        public new IList Controls => base.Controls;
-        public IFont Font { get; set; }
-        public event EventHandler MouseClick;
-        public event EventHandler SelectedIndexChanged;
-        public event EventHandler MouseDoubleClick;
-        public event EventHandler KeyDown;
+
+        public FlatStyle FlatStyle
+        {
+            get => (FlatStyle)_button.FlatStyle;
+            set => _button.FlatStyle = (System.Windows.Forms.FlatStyle)value;
+        }
     }
 }

@@ -1,42 +1,48 @@
 ﻿using System;
-using System.Collections;
-using System.Drawing;
 using System.Windows.Forms;
-using NetSettingsCore.Common;
-using BorderStyle = NetSettingsCore.Common.BorderStyle;
-using DockStyle = NetSettingsCore.Common.DockStyle;
+using NetSettings.Common.Interfaces;
+using BorderStyle = NetSettings.Common.Classes.BorderStyle;
+using WinFormBorderStyle = System.Windows.Forms.BorderStyle;
 
-namespace NetSettingsCore.WinForms.WinFormControls
+namespace NetSettings.WinForms.WinFormControls
 {
-    public class WinFormTextBox : TextBox, ITextBox
+    internal class WinFormTextBox : WinFormControl, ITextBox
     {
-        private WinFormFont _winFormFont;
-        public new IList Controls => base.Controls;
-        public new IFont Font
+        private readonly TextBox _textBox = new TextBox();
+
+        public WinFormTextBox()
         {
-            get
-            {
-                if (_winFormFont == null)
-                {
-                    _winFormFont = new WinFormFont(base.Font);
-                }
-
-                return _winFormFont;
-
-            }
-            set
-            {
-                base.Font = new Font(value.FontFamily, value.Size, (FontStyle)value.Appearance);
-                _winFormFont = new WinFormFont(base.Font);
-            }
+            _control = _textBox;
         }
 
-        public event EventHandler MouseClick;
-        public event EventHandler SelectedIndexChanged;
-        public event EventHandler MouseDoubleClick;
-        public event EventHandler KeyDown;
-        public ITextBox Instance { get=>this; }
-        public DockStyle Dock { get; set; }
-        public BorderStyle BorderStyle { get; set; }
+        public bool Multiline { get => _textBox.Multiline; set => _textBox.Multiline = value; }
+        public bool ReadOnly { get => _textBox.ReadOnly; set => _textBox.ReadOnly = value; }
+
+        public BorderStyle BorderStyle
+        {
+            get => Enum.Parse<BorderStyle>(_textBox.BorderStyle.ToString());
+            set => Enum.Parse<WinFormBorderStyle>(value.ToString());
+        }
+
+        //private WinFormFont _winFormFont;
+
+        //public new IFont Font
+        //{
+        //    get
+        //    {
+        //        if (_winFormFont == null)
+        //        {
+        //            _winFormFont = new WinFormFont(base.Font);
+        //        }
+
+        //        return _winFormFont;
+
+        //    }
+        //    set
+        //    {
+        //        base.Font = new Font(value.FontFamily, value.Size, (FontStyle)value.Appearance);
+        //        _winFormFont = new WinFormFont(base.Font);
+        //    }
+        //}
     }
 }

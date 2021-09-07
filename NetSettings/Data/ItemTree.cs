@@ -3,7 +3,6 @@ using System;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using NetSettingsCore.Common;
 
 namespace NetSettings.Data
 {
@@ -30,7 +29,7 @@ namespace NetSettings.Data
 
         public static ItemTree FromFile(string aFileName)
         {
-            string text = File.ReadAllText(aFileName);
+            var text = File.ReadAllText(aFileName);
             var root = (ItemTree)JsonConvert.DeserializeObject(text, typeof(ItemTree));
             return root;
         }
