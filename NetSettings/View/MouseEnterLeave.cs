@@ -17,13 +17,13 @@ namespace NetSettings.View
 
         private void AddEvents(IControl aTarget)
         {
-            if (aTarget != null)
+            //if (aTarget != null)
             {
                 aTarget.MouseEnter += delegate(object sender, EventArgs e) { aTarget_MouseEnter(aTarget, e); };
                 aTarget.MouseLeave += delegate (object sender, EventArgs e) { aTarget_MouseLeave(aTarget, e); };
             }
 
-            if (aTarget.VisualControl != null) //TODO: Remove this condition!
+            //if (aTarget.VisualControl != null) //TODO: Remove this condition!
             {
                 foreach (IControl control in aTarget.VisualControl)
                     AddEvents(control);//TODO: Fix this!

@@ -18,5 +18,9 @@ namespace NetSettings.WinForms.WinFormControls
         {
             set => _colorControl.BackColor = DrawingColor.FromArgb(value.A, value.R, value.G, value.B);
         }
+
+        public bool Multiline { get; set; }
+        public bool ReadOnly { get; set; }
+        public BorderStyle BorderStyle { get; set; }
     }
 }

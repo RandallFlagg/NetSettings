@@ -110,10 +110,13 @@ namespace NetSettings.Data
             foreach (string key in fQualifiedNames.Keys.ToList())
                 ItemChanged(new ItemChangedArgs()
                 {
-                      ChangedMode = ItemChangedMode.Synthesized
-                    , Key = key
-                    , Val = GetValueOrDefault(key)
-                    , type = fQualifiedNames[key].type
+                    ChangedMode = ItemChangedMode.Synthesized
+                    ,
+                    Key = key
+                    ,
+                    Val = GetValueOrDefault(key)
+                    ,
+                    type = fQualifiedNames[key].type
                 });
         }
 

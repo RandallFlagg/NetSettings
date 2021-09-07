@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31512.422
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSettingsCore", "NetSettings\NetSettingsCore.csproj", "{4E5FC3A6-3959-4A03-9EE0-C8C179A37277}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSettingsTestCore", "NetSettingsTest\NetSettingsTestCore.csproj", "{FDA66F8D-AB54-4EC4-B158-2453F970B0EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSettingsTest", "NetSettingsTest\NetSettingsTest.csproj", "{FDA66F8D-AB54-4EC4-B158-2453F970B0EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaMVVM", "AvaloniaMVVM\AvaloniaMVVM.csproj", "{68D13C20-E81B-41A7-8036-F90EBFE60730}"
 EndProject
