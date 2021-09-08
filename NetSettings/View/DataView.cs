@@ -62,7 +62,10 @@ namespace NetSettings.View
             DataView.VerifyParameters(aParams);
             fParams = aParams;
 
-            fLabelNormal = (IFont)guiProvider.CreateGuiElement(GuiElementType.IFont, labelFont, 10f, FontAppearance.Regular);
+            fLabelNormal = (IFont)guiProvider.CreateGuiElement(GuiElementType.IFont);
+            fLabelNormal.FamilyName = labelFont;
+            fLabelNormal.Size = 10f;
+            fLabelNormal.Appearance = FontAppearance.Regular;
             fLabelBold = (IFont)guiProvider.CreateGuiElement(GuiElementType.IFont, labelFont, 10f, FontAppearance.Bold);
             fMenuLabel = (IFont)guiProvider.CreateGuiElement(GuiElementType.IFont, labelFont, 12f, FontAppearance.Bold);
 

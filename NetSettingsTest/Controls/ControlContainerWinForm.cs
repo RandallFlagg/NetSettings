@@ -5,14 +5,14 @@ using NetSettings.WinForms;
 
 namespace NetSettingsTest.Controls
 {
-    public partial class ControlContainer : ScrollableControl, IControlContainer
+    public partial class ControlContainerWinForm : ScrollableControl, IControlContainer
     {
         public void AddControl(IControl control)
         {
             this.Controls.Add(control.Instance as Control);
         }
 
-        public ControlContainer()
+        public ControlContainerWinForm()
         {
             base.DoubleBuffered = true;
             //https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.controlstyles?view=netcore-3.1

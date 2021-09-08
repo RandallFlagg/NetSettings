@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using NetSettings.Data;
 using NetSettings.View;
 using NetSettings.WinForms;
+using NetSettingsTest.Controls;
 using Newtonsoft.Json;
 using TextBox = System.Windows.Forms.TextBox;
 
@@ -25,6 +26,8 @@ namespace NetSettingsTest.Forms
             fView = new DataView();
             const string settingsFilePath = @"Resources\GuiTemplate.json";
             fData = new DataProvider(ItemTree.FromFile(settingsFilePath));
+            userControl11 = new ControlContainerWinForm();
+            controlContainer1 = new ControlContainerWinForm();
             //Create manually view[1]
             fDataViewParams = new DataViewParams
             {

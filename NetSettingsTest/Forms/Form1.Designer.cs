@@ -36,8 +36,8 @@ namespace NetSettingsTest.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.userControl11 = new ControlContainer();
-            this.controlContainer1 = new ControlContainer();
+            this.userControl11 = new ControlContainerWinForm();
+            this.controlContainer1 = new ControlContainerWinForm();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -165,7 +165,7 @@ namespace NetSettingsTest.Forms
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private ControlContainer userControl11;
-        private ControlContainer controlContainer1;
+        private ControlContainerWinForm userControl11;
+        private ControlContainerWinForm controlContainer1;
     }
 }

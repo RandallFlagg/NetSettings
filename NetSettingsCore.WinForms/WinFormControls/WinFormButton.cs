@@ -6,10 +6,11 @@ namespace NetSettings.WinForms.WinFormControls
 {
     internal class WinFormButton : WinFormControl, IButton
     {
-        private readonly Button _button = new Button();
+        private readonly Button _button;
 
         public WinFormButton()
         {
+            _button = new Button();
             _control = _button;
         }
 

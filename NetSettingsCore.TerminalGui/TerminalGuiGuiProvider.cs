@@ -1,18 +1,18 @@
 ﻿using System;
 using NetSettings.Common.Classes;
 using NetSettings.Common.Interfaces;
-using NetSettings.WinForms.WinFormControls;
+using NetSettings.TerminalGui.TerminalGuiControls;
 
-namespace NetSettings.WinForms
+namespace NetSettingsCore.TerminalGui
 {
-    public class WinFormGuiProvider : IGuiProvider
+    public class TerminalGuiGuiProvider : IGuiProvider
     {
         public IGuiElement CreateGuiElement(string guiElementName)
         {
             switch (guiElementName)
             {
                 case "textbox":
-                    var value = new WinFormControl();
+                    var value = new TerminalGuiView();
                     return value;
                 default:
                     throw new NotImplementedException("gui element creation is yet to be implemented.");
@@ -32,25 +32,10 @@ namespace NetSettings.WinForms
                 case GuiElementType.Image:
                 case GuiElementType.Number:
                 case GuiElementType.Text:
-                    control = new WinFormTextBox();
+                    throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    //control = new WinFormTextBox();
                     break;
                 case GuiElementType.IFont:
-                    if (list == null)
-                    {
-                        control = new WinFormFont();
-                    }
-                    switch (list.Length)
-                    {
-                        case 2:
-                            control = new WinFormFont((string)list[0], (float)list[1]);
-                            break;
-
-                        case 3:
-                            control = new WinFormFont((string)list[0], (float)list[1], (FontAppearance)list[2]);
-                            break;
-                        default:
-                            throw new NotImplementedException();
-                    }
                     //if (list.Length == 2)
                     //{
                     //    control = new WinFormFont((string)list[0], (float)list[1]);
@@ -63,30 +48,45 @@ namespace NetSettings.WinForms
                     //{
                     //    throw new NotImplementedException();
                     //}
+                    control = new TelegramGuiFont();
                     break;
                 case GuiElementType.GuiElement:
-                    control = new WinFormControl();
+                    control = new TerminalGuiView();
+                    //control = new WinFormControl();
                     break;
                 case GuiElementType.Label:
-                    control = new WinFormLabel();
+                    control = new TerminalGuiLabel();
+                    //control = new WinFormLabel();
                     break;
                 case GuiElementType.Menu: //Label
-                    control = new WinFormLabel();
+                    //throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    control = new TerminalGuiView();
+                    //control = new WinFormLabel();
                     break;
                 case GuiElementType.Bool:
-                    control = new WinFormCheckBox();
+                    //throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    control = new TerminalGuiView();
+                    //control = new WinFormCheckBox();
                     break;
                 case GuiElementType.Button:
-                    control = new WinFormButton();
+                    //throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    control = new TerminalGuiView();
+                    //control = new WinFormButton();
                     break;
                 case GuiElementType.Color:
-                    control = new WinFormColorControl();
+                    //throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    control = new TerminalGuiView();
+                    //control = new WinFormColorControl();
                     break;
                 case GuiElementType.Combo:
-                    control = new WinFormComboBox();
+                    //throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    control = new TerminalGuiView();
+                    //control = new WinFormComboBox();
                     break;
                 case GuiElementType.ColorDialog:
-                    control = new WinFormColorDialog();
+                    //throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    control = new TerminalGuiView();
+                    //control = new WinFormColorDialog();
                     break;
                 default:
                     throw new NotImplementedException($"gui element {guiElementName} is not known. How did we get here?");
@@ -102,7 +102,7 @@ namespace NetSettings.WinForms
 
         public IGuiElement CreateGuiElement(object guiElementName, params object[] list)
         {
-            return CreateGuiElement((GuiElementType)guiElementName);
+            return CreateGuiElement((GuiElementType) guiElementName);
         }
 
         public void ShowPreviewForm(ShowFormParams parameters)

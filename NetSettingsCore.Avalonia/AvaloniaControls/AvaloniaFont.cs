@@ -25,12 +25,13 @@ namespace NetSettings.Avalonia.AvaloniaControls
             Instance = font;
         }
 
-        public float Size => throw new NotImplementedException();//Instance.Size);
-        public FontAppearance Appearance { get; set; }
+        public float Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }//Instance.Size);
+        public FontAppearance Appearance { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Name { get; set; }
-        public string FontFamily
+        public string FamilyName
         {
             get => throw new NotImplementedException();//Instance.Name);
+            set => throw new NotImplementedException();
         }
         //string IFont.FontFamily { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public object Native { get; set; }

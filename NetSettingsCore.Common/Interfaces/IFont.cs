@@ -4,10 +4,12 @@ namespace NetSettings.Common.Interfaces
 {
     public interface IFont : INativeGuiElement
     {
-        float Size { get; }
-        FontAppearance Appearance { get;  }
-        string FontFamily { get;  }
+        float Size { get; set; }
+        //FontAppearance Appearance { get; }
+        //string FontFamily { get;  }
         MeasureUnit Unit { get; }
+        string FamilyName { get; set; }
+        FontAppearance Appearance { get; set; }
     }
 
     public interface INativeGuiElement : IGuiElement
