@@ -62,6 +62,7 @@ namespace CustomControls.WinForms.Controls
         {
             set
             {
+                base.BackColor = value;
                 if (!Updating)
                 {
                     base.BackColor = Color.FromArgb(value.A, value.R, value.G, value.B);
