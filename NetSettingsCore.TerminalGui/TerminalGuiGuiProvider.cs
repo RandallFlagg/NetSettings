@@ -32,7 +32,7 @@ namespace NetSettingsCore.TerminalGui
                 case GuiElementType.Image:
                 case GuiElementType.Number:
                 case GuiElementType.Text:
-                    throw new NotImplementedException("gui element creation is yet to be implemented.");
+                    control = new TerminalGuiTextField();
                     //control = new WinFormTextBox();
                     break;
                 case GuiElementType.IFont:
@@ -65,12 +65,12 @@ namespace NetSettingsCore.TerminalGui
                     break;
                 case GuiElementType.Bool:
                     //throw new NotImplementedException("gui element creation is yet to be implemented.");
-                    control = new TerminalGuiView();
+                    control = new TerminalGuiCheckbox();
                     //control = new WinFormCheckBox();
                     break;
                 case GuiElementType.Button:
                     //throw new NotImplementedException("gui element creation is yet to be implemented.");
-                    control = new TerminalGuiView();
+                    control = new TerminalGuiButton();
                     //control = new WinFormButton();
                     break;
                 case GuiElementType.Color:
@@ -80,7 +80,7 @@ namespace NetSettingsCore.TerminalGui
                     break;
                 case GuiElementType.Combo:
                     //throw new NotImplementedException("gui element creation is yet to be implemented.");
-                    control = new TerminalGuiView();
+                    control = new TerminalGuiComboBox();
                     //control = new WinFormComboBox();
                     break;
                 case GuiElementType.ColorDialog:

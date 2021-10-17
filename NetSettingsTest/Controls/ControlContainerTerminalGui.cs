@@ -58,7 +58,8 @@ namespace NetSettingsTest.Controls
 
         public void EndUpdate()
         {
-            throw new NotImplementedException();
+            //TODO: IMPLEMENT REQUIRED
+            //throw new NotImplementedException();
         }
 
         public void Reset()
@@ -69,7 +70,8 @@ namespace NetSettingsTest.Controls
 
         public void ResetPosition()
         {
-            throw new NotImplementedException();
+            //TODO: IMPLEMENT ME
+            //throw new NotImplementedException();
         }
 
         public void StartUpdate()

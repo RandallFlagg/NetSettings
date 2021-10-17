@@ -21,27 +21,33 @@ namespace NetSettings.TerminalGui.TerminalGuiControls
             _visualControls = new List<IControl>();
         }
 
-        public bool Visible { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool Visible { get => _view.Visible; set => _view.Visible = value; }
         public string Text { get => _view.Text.ToString(); set => _view.Text = value; }
 
         public IList VisualControl => (IList)this._visualControls;
 
         public IList<IControl> LogicalControls { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Width { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Height { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Width { get => _view.Frame.Width; set => _view.Width = value; }
+        public int Height { get => _view.Frame.Height; set => _view.Height = value; }
         public DockStyle Dock { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Common.Classes.Color BackColor
         {
-            get => throw new NotImplementedException();
+            //get => throw new NotImplementedException();
             //    _view.ColorScheme["Base"];
-            set => throw new NotImplementedException();
+            //set => throw new NotImplementedException();
             //_view.ColorScheme = value;
+            get; set;
         }
         public Common.Classes.Color ForeColor
         {
-            set => throw new NotImplementedException();//_view.ColorScheme = value;
+            get; set;
+            //set => throw new NotImplementedException();//_view.ColorScheme = value; //_view.colthis.ForeColor = value;// ConsoleColor 
         }
-        public Common.Classes.Point Location { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Common.Classes.Point Location
+        {
+            get; set;
+            //get => throw new NotImplementedException(); set => throw new NotImplementedException();
+        }
         public IFont Font { get; set; }
 
         public virtual object Instance => _view;
