@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <UseWindowsForms>false</UseWindowsForms>
+    <RootNamespace>NetSettings</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="View\DataView - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetSettingsCore.Common\NetSettingsCore.Common.csproj" />
+  </ItemGroup>
+
+</Project>

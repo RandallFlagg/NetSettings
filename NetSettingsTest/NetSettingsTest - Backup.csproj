@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>False</UseWindowsForms>
+    <StartupObject>NetSettingsTest.WinFormProgram</StartupObject>
+    <RootNamespace>NetSettingsTest</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TERMIALGUI.cs" />
+    <Compile Remove="TerminalGuiProgram.cs" />
+    <Compile Remove="__TerminalGuiProgram.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetSettingsCore.Avalonia\NetSettingsCore.Avalonia.csproj" />
+    <ProjectReference Include="..\NetSettingsCore.WinForms\NetSettingsCore.WinForms.csproj" />
+    <ProjectReference Include="..\NetSettings\NetSettingsCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\ControlContainerWinForm.cs" />
+    <Compile Update="Forms\App.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\MainWindow.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\PreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Forms\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Forms\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Resources\GuiTemplate.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
